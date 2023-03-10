@@ -39,8 +39,18 @@ function getArrayUniqueValues2(arr) {
     return uniqueValues;
 }
 
+function getArrayUniqueValues3(arr) {
+    return arr.filter((value, index, array) => array.indexOf(value) === index);
+}
+
+function getArrayUniqueValues4(arr) {
+    return Array.from(new Set(arr));
+}
+
 const arr = getRandomArray(20);
 console.log("arr =", arr);
 console.log("");
 console.log(getArrayUniqueValues1(arr));
 console.log(getArrayUniqueValues2(arr));
+console.log(getArrayUniqueValues3(arr));
+console.log(getArrayUniqueValues4(arr));
