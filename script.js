@@ -8,7 +8,7 @@ function getRandomArray(length, min = 0, max = 9) {
     return arr;
 }
 
-function getArrayUniqueValues1(arr) {
+function extractArrayValues1(arr) {
     const len = arr.length;
     const uniqueValues = [];
 
@@ -26,7 +26,7 @@ function getArrayUniqueValues1(arr) {
     return uniqueValues;
 }
 
-function getArrayUniqueValues2(arr) {
+function extractArrayValues2(arr) {
     const len = arr.length;
     const uniqueValues = [];
     arr.sort((a, b) => a - b);
@@ -39,18 +39,18 @@ function getArrayUniqueValues2(arr) {
     return uniqueValues;
 }
 
-function getArrayUniqueValues3(arr) {
+function extractArrayValues3(arr) {
     return arr.filter((value, index, array) => array.indexOf(value) === index);
 }
 
-function getArrayUniqueValues4(arr) {
+function extractArrayValues4(arr) {
     return Array.from(new Set(arr));
 }
 
 const arr = getRandomArray(20);
 console.log("arr =", arr);
 console.log("");
-console.log(getArrayUniqueValues1(arr));
-console.log(getArrayUniqueValues2(arr));
-console.log(getArrayUniqueValues3(arr));
-console.log(getArrayUniqueValues4(arr));
+console.log(extractArrayValues1(arr));
+console.log(extractArrayValues2(arr));
+console.log(extractArrayValues3(arr));
+console.log(extractArrayValues4(arr));
