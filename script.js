@@ -1,11 +1,9 @@
-function getRandomArray(length, min = 0, max = 9) {
-    const arr = [];
-    
-    for (let i = 0; i < length; i++) {
-        arr[i] = Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+function getRandomInteger(min = 0, max = 9) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    return arr;
+function getRandomArray(length, min, max) {
+    return Array.from({length: length}, () => getRandomInteger(min, max));
 }
 
 function extractArrayValues1(arr) {
@@ -47,7 +45,7 @@ function extractArrayValues4(arr) {
     return Array.from(new Set(arr));
 }
 
-const arr = getRandomArray(20);
+const arr = getRandomArray(20, 0, 15);
 console.log("arr =", arr);
 console.log("");
 console.log(extractArrayValues1(arr));
